@@ -7,6 +7,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import Image from "next/image";
 import HeroVisual from "@/components/ui/HeroVisual";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 
@@ -31,12 +32,20 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden"
     >
       {/* Background — decorative */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[--background]"
-      >
-        {/* Soft radial gradient in ocean blue */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(26,82,118,0.10),transparent)]" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        {/* Background photo */}
+        <Image
+          src="/hero-dentist.png"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        {/* White overlay — preserves WCAG AAA contrast for text above */}
+        <div className="absolute inset-0 bg-white/82" />
+        {/* Soft ocean blue radial gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(26,82,118,0.12),transparent)]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-8">
