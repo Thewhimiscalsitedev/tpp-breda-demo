@@ -37,8 +37,8 @@ export default function HeroVisual() {
     >
       {/* Ambient glow — decorative */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-violet-500/10 blur-[100px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-sky-400/10 blur-[80px]" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#1a5276]/10 blur-[100px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-[#1a5276]/8 blur-[80px]" />
       </div>
 
       {/*
@@ -63,8 +63,8 @@ export default function HeroVisual() {
         {/* Inner wrapper clips the image to rounded corners without breaking the 3-D plane */}
         <div className="absolute inset-0 rounded-3xl overflow-hidden">
           <Image
-            src="/hero-bg.png"
-            alt="Hero visual — a high-end render representing our craft"
+            src="/hero-dentist.png"
+            alt="Een tandprotheticus aan het werk in de praktijk van TPP Breda"
             fill
             priority
             sizes="(max-width: 768px) 100vw, 50vw"
