@@ -7,42 +7,40 @@ import { fadeUp, staggerContainer } from "@/lib/motion";
 const services = [
   {
     number: "01",
-    title: "EAA Compliant Web Design",
+    title: "Nieuwe Kunstgebitten",
     description:
-      "The European Accessibility Act is now enforceable. We build sites that meet every requirement out of the box — semantic HTML, WCAG 2.2 AA contrast, keyboard navigation, and full ARIA coverage — so you stay ahead of regulation and never face a fine.",
-    tags: ["WCAG 2.2", "ARIA", "Semantic HTML", "EU Compliance"],
+      "Een volledig nieuwe gebitsprothese, vakkundig op maat gemaakt voor een comfortabele en natuurlijke pasvorm. U krijgt een esthetisch resultaat dat naadloos aansluit op uw wensen en gelaatsvorm.",
+    tags: ["Volledig op maat", "Esthetisch", "Comfortabele pasvorm"],
     icon: (
       <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <path d="m9 12 2 2 4-4" />
+        <path d="M8 3C5.8 3 4 5 4 7.5c0 2 .9 3.6 1.8 5L7.5 21h3.5L12 16l1 5h3.5l1.7-8.5C19.1 11.1 20 9.5 20 7.5 20 5 18.2 3 16 3c-1.3 0-2.2.6-4 .6C10.2 3.6 9.3 3 8 3z" />
       </svg>
     ),
   },
   {
     number: "02",
-    title: "3D Scroll Animations",
+    title: "Klikgebitten",
     description:
-      "First impressions are everything. We craft scroll-driven 3-D experiences that feel native to the device — fluid, purposeful, and fast. The kind of interaction that earns the second visit and turns browsers into believers.",
-    tags: ["Framer Motion", "Three.js", "WebGL", "GSAP"],
+      "Een klikgebit (implantaatstabilisering) zorgt voor een stevig houvast dat niet verschuift. Geen ongemak meer aan tafel — gewoon genieten van uw maaltijden en gesprekken, vol vertrouwen.",
+    tags: ["Implantaatstabilisering", "Vaste pasvorm", "Meer comfort"],
     icon: (
       <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-        <path d="M2 17l10 5 10-5" />
-        <path d="M2 12l10 5 10-5" />
+        <circle cx="9" cy="9" r="5" />
+        <circle cx="15" cy="15" r="5" />
+        <path d="M13 9h5M6 15h5" />
       </svg>
     ),
   },
   {
     number: "03",
-    title: "AI Automation",
+    title: "Reparaties",
     description:
-      "Your business shouldn't stop when your team does. We integrate AI-powered workflows that handle leads, content, support, and operations around the clock — cutting overhead while compounding output, 24 hours a day.",
-    tags: ["LLM Integration", "Workflow Automation", "AI Agents", "24/7 Ops"],
+      "Kleine schade, gebarsten of losse elementen? In de meeste gevallen repareert u dat bij ons binnen één bezoek. U hoeft niet lang zonder gebit — klaar terwijl u wacht.",
+    tags: ["Klaar terwijl u wacht", "Dezelfde dag", "Kleine ingreep"],
     icon: (
       <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="11" width="18" height="10" rx="2" />
-        <path d="M12 2a4 4 0 0 1 4 4v5H8V6a4 4 0 0 1 4-4z" />
-        <line x1="12" y1="15" x2="12" y2="17" />
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
       </svg>
     ),
   },
@@ -73,14 +71,14 @@ export default function Services() {
             variants={shouldReduceMotion ? {} : fadeUp}
             className="text-xs font-semibold tracking-[0.2em] uppercase text-[--muted]"
           >
-            What we do
+            Onze specialisaties
           </motion.p>
           <motion.h2
             id="services-heading"
             variants={shouldReduceMotion ? {} : fadeUp}
             className="text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.1] text-[--foreground]"
           >
-            Services built for<br />the next decade.
+            Vakmanschap voor<br />uw glimlach.
           </motion.h2>
         </motion.div>
 
@@ -101,7 +99,7 @@ export default function Services() {
               {/* Hover glow — decorative */}
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(120,119,198,0.07),transparent)]"
+                className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(26,82,118,0.07),transparent)]"
               />
 
               {/* Top row: number + icon */}
@@ -112,7 +110,7 @@ export default function Services() {
                 >
                   {service.number}
                 </span>
-                <span className="text-[--muted] group-hover:text-[--foreground] transition-colors duration-300">
+                <span className="text-[--muted] group-hover:text-[--accent] transition-colors duration-500">
                   {service.icon}
                 </span>
               </div>
@@ -130,7 +128,7 @@ export default function Services() {
               {/* Tags */}
               <ul
                 role="list"
-                aria-label={`Technologies for ${service.title}`}
+                aria-label={`Kenmerken van ${service.title}`}
                 className="flex flex-wrap gap-2"
               >
                 {service.tags.map((tag) => (
@@ -143,10 +141,10 @@ export default function Services() {
                 ))}
               </ul>
 
-              {/* Bottom border accent — animates in on hover */}
+              {/* Bottom border accent */}
               <div
                 aria-hidden="true"
-                className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[--accent]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"
               />
             </motion.li>
           ))}
@@ -157,15 +155,15 @@ export default function Services() {
           variants={shouldReduceMotion ? {} : fadeUp}
           initial={shouldReduceMotion ? false : "hidden"}
           animate={inView ? "visible" : "hidden"}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.8 }}
           className="mt-16 flex justify-center"
         >
           <a
             href="#contact"
-            className="inline-flex h-12 items-center justify-center rounded-full border border-[--border] px-8 text-sm font-medium text-[--foreground] hover:bg-[--foreground] hover:text-[--background] transition-colors duration-200"
-            aria-label="Discuss your project with us"
+            className="inline-flex h-12 items-center justify-center rounded-full border-2 border-[--accent] px-8 text-sm font-medium text-[--accent] hover:bg-[--accent] hover:text-[--accent-fg] transition-colors duration-300"
+            aria-label="Maak een afspraak"
           >
-            Discuss your project
+            Maak een afspraak
           </a>
         </motion.div>
 

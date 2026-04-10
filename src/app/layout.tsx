@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
@@ -15,14 +16,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Agency — Crafting Digital Excellence",
+  title: "TPP Breda — Tandprotheses op Maat",
   description:
-    "A world-class digital agency building bold, purposeful products for forward-thinking brands.",
-  metadataBase: new URL("https://yourdomain.com"),
+    "Familiebedrijf gespecialiseerd in tandprotheses voor senioren in Breda. Klikgebitten, kunstgebitten en reparaties — volledig op maat.",
+  metadataBase: new URL("https://tppbreda.nl"),
   openGraph: {
-    title: "Agency — Crafting Digital Excellence",
+    title: "TPP Breda — Tandprotheses op Maat",
     description:
-      "A world-class digital agency building bold, purposeful products for forward-thinking brands.",
+      "Familiebedrijf gespecialiseerd in tandprotheses voor senioren in Breda. Klikgebitten, kunstgebitten en reparaties — volledig op maat.",
     type: "website",
   },
 };
@@ -34,13 +35,13 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="nl"
+      className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[--background] text-[--foreground]">
-        {/* Skip to main content — EAA / WCAG 2.4.1 */}
+        {/* Sla over naar hoofdinhoud — EAA / WCAG 2.4.1 */}
         <a href="#main-content" className="skip-link">
-          Skip to main content
+          Sla over naar hoofdinhoud
         </a>
         {children}
       </body>

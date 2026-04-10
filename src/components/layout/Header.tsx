@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
 const navItems = [
-  { label: "Services", href: "#services" },
+  { label: "Diensten", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -21,13 +21,13 @@ export default function Header() {
   return (
     <motion.header
       role="banner"
-      aria-label="Site header"
+      aria-label="Siteheader"
       initial={shouldReduceMotion ? false : { opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
+      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[--background]/80 backdrop-blur-xl border-b border-[--border]"
+          ? "bg-[--background]/90 backdrop-blur-xl border-b border-[--border]"
           : "bg-transparent"
       }`}
     >
@@ -36,20 +36,20 @@ export default function Header() {
           {/* Logo */}
           <a
             href="#main-content"
-            aria-label="Aether Innovations — back to top"
-            className="text-sm font-semibold tracking-widest uppercase"
+            aria-label="TPP Breda — ga naar boven"
+            className="text-sm font-semibold tracking-widest uppercase text-[--accent]"
           >
-            Aether
+            TPP Breda
           </a>
 
           {/* Desktop nav */}
-          <nav aria-label="Primary navigation">
+          <nav aria-label="Primaire navigatie">
             <ul className="hidden md:flex items-center gap-8" role="list">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="text-sm text-[--muted] hover:text-[--foreground] transition-colors duration-200"
+                    className="text-sm text-[--muted] hover:text-[--accent] transition-colors duration-300"
                   >
                     {item.label}
                   </a>
@@ -61,17 +61,17 @@ export default function Header() {
           {/* CTA */}
           <a
             href="#contact"
-            className="hidden md:inline-flex items-center justify-center h-9 px-5 rounded-full bg-[--foreground] text-[--background] text-sm font-medium hover:opacity-80 transition-opacity duration-200"
-            aria-label="Get in touch with us"
+            className="hidden md:inline-flex items-center justify-center h-9 px-5 rounded-full bg-[--accent] text-[--accent-fg] text-sm font-medium hover:opacity-85 transition-opacity duration-300"
+            aria-label="Afspraak maken"
           >
-            Get in touch
+            Afspraak maken
           </a>
 
-          {/* Mobile menu button — expanded later */}
+          {/* Mobile menu button */}
           <button
             type="button"
             className="md:hidden p-2 rounded-md text-[--foreground]"
-            aria-label="Open navigation menu"
+            aria-label="Navigatiemenu openen"
             aria-expanded="false"
             aria-controls="mobile-menu"
           >

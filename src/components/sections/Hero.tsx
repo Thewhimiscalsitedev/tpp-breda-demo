@@ -20,7 +20,7 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", shouldReduceMotion ? "0%" : "20%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", shouldReduceMotion ? "0%" : "12%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
@@ -30,13 +30,13 @@ export default function Hero() {
       aria-labelledby="hero-headline"
       className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* Background noise texture — decorative */}
+      {/* Background — decorative */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[--background]"
       >
-        {/* Subtle radial gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(120,119,198,0.12),transparent)]" />
+        {/* Soft radial gradient in ocean blue */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(26,82,118,0.10),transparent)]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-8">
@@ -54,20 +54,20 @@ export default function Hero() {
             <motion.p
               variants={shouldReduceMotion ? {} : fadeUp}
               className="text-xs font-semibold tracking-[0.2em] uppercase text-[--muted]"
-              aria-label="Agency tagline"
+              aria-label="Familiebedrijf gevestigd in Breda"
             >
-              Digital Craft Studio
+              Familiebedrijf · Gevestigd in Breda
             </motion.p>
 
             {/* Headline */}
             <motion.h1
               id="hero-headline"
               variants={shouldReduceMotion ? {} : fadeUp}
-              className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05] text-[--foreground]"
+              className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.08] text-[--foreground]"
             >
-              We build things{" "}
-              <em className="not-italic text-[--muted]">worth</em>{" "}
-              experiencing.
+              Uw glimlach,{" "}
+              <em className="not-italic text-[--accent]">ons vakmanschap</em>{" "}
+              sinds 1976.
             </motion.h1>
 
             {/* Sub-copy */}
@@ -75,8 +75,8 @@ export default function Hero() {
               variants={shouldReduceMotion ? {} : fadeUp}
               className="max-w-md text-lg leading-relaxed text-[--muted]"
             >
-              Strategy, design, and engineering — unified. We partner with
-              ambitious brands to create digital products that set the standard.
+              Gespecialiseerd in klikgebitten en gebitsprotheses in Breda.
+              Volledig afgestemd op uw comfort en toegankelijkheid.
             </motion.p>
 
             {/* CTA row */}
@@ -85,34 +85,34 @@ export default function Hero() {
               className="flex flex-wrap items-center gap-4"
             >
               <a
-                href="#work"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-[--foreground] text-[--background] px-7 text-sm font-medium hover:opacity-80 transition-opacity duration-200"
-                aria-label="View our selected work"
+                href="#services"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-[--accent] text-[--accent-fg] px-7 text-sm font-medium hover:opacity-85 transition-opacity duration-300"
+                aria-label="Bekijk onze diensten"
               >
-                View our work
+                Onze diensten
               </a>
               <a
                 href="#contact"
-                className="inline-flex h-12 items-center justify-center rounded-full border border-[--border] px-7 text-sm font-medium text-[--foreground] hover:bg-[--foreground] hover:text-[--background] transition-colors duration-200"
-                aria-label="Start a project with us"
+                className="inline-flex h-12 items-center justify-center rounded-full border-2 border-[--accent] px-7 text-sm font-medium text-[--accent] hover:bg-[--accent] hover:text-[--accent-fg] transition-colors duration-300"
+                aria-label="Maak een afspraak"
               >
-                Start a project
+                Afspraak maken
               </a>
             </motion.div>
 
-            {/* Social proof / metrics */}
+            {/* Stats */}
             <motion.dl
               variants={shouldReduceMotion ? {} : fadeUp}
               className="flex flex-wrap gap-8 pt-4 border-t border-[--border]"
             >
               {[
-                { value: "99/100", label: "Speed Score" },
-                { value: "Yes", label: "EAA Compliant" },
-                { value: "Breda", label: "Built in" },
+                { value: "50+", label: "Jaar ervaring" },
+                { value: "100%", label: "Op maat" },
+                { value: "Breda", label: "Vestiging" },
               ].map((stat) => (
                 <div key={stat.label} className="flex flex-col gap-1">
                   <dt className="text-xs text-[--muted] tracking-wide">{stat.label}</dt>
-                  <dd className="text-2xl font-semibold tabular-nums">{stat.value}</dd>
+                  <dd className="text-2xl font-semibold tabular-nums text-[--foreground]">{stat.value}</dd>
                 </div>
               ))}
             </motion.dl>
@@ -121,11 +121,11 @@ export default function Hero() {
           {/* ── Right column: 3-D visual ── */}
           <motion.div
             variants={shouldReduceMotion ? {} : {
-              hidden: { opacity: 0, scale: 0.94 },
+              hidden: { opacity: 0, scale: 0.97 },
               visible: {
                 opacity: 1,
                 scale: 1,
-                transition: { duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+                transition: { duration: 1.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
               },
             }}
             initial={shouldReduceMotion ? false : "hidden"}
@@ -142,14 +142,14 @@ export default function Hero() {
         aria-hidden="true"
         initial={shouldReduceMotion ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.6 }}
+        transition={{ delay: 2, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
         <span className="text-[10px] tracking-widest uppercase text-[--muted]">Scroll</span>
         <motion.div
           animate={shouldReduceMotion ? {} : { y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          className="w-px h-10 bg-gradient-to-b from-[--muted] to-transparent"
+          transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+          className="w-px h-10 bg-gradient-to-b from-[--accent] to-transparent"
         />
       </motion.div>
     </section>

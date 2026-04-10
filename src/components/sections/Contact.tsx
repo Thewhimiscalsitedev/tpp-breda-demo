@@ -21,7 +21,7 @@ export default function Contact() {
         {/* Background radial — decorative */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_60%,rgba(120,119,198,0.08),transparent)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_60%,rgba(26,82,118,0.07),transparent)]"
         />
 
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
@@ -36,7 +36,7 @@ export default function Contact() {
               variants={shouldReduceMotion ? {} : fadeUp}
               className="text-xs font-semibold tracking-[0.2em] uppercase text-[--muted]"
             >
-              Let&rsquo;s work together
+              Neem contact op
             </motion.p>
 
             {/* Headline */}
@@ -45,7 +45,7 @@ export default function Contact() {
               variants={shouldReduceMotion ? {} : fadeUp}
               className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05] text-[--foreground]"
             >
-              Ready to build for<br className="hidden sm:block" /> the next decade?
+              Klaar voor een<br className="hidden sm:block" /> comfortabeler gebit?
             </motion.h2>
 
             {/* Sub-copy */}
@@ -53,17 +53,17 @@ export default function Contact() {
               variants={shouldReduceMotion ? {} : fadeUp}
               className="max-w-md text-lg leading-relaxed text-[--muted]"
             >
-              Tell us about your project. We&rsquo;ll get back to you within one business day.
+              Bel ons of stuur een bericht. Wij helpen u graag verder, ook als u nog twijfelt.
             </motion.p>
 
             {/* CTA button */}
             <motion.div variants={shouldReduceMotion ? {} : fadeUp}>
               <a
-                href="mailto:your-email@example.com"
-                className="inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[--foreground] text-[--background] px-10 text-sm font-medium hover:opacity-80 active:scale-95 transition-all duration-200"
-                aria-label="Start a project — opens your email client"
+                href="mailto:info@tppbreda.nl"
+                className="inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[--accent] text-[--accent-fg] px-10 text-sm font-medium hover:opacity-85 active:scale-95 transition-all duration-300"
+                aria-label="Plan een afspraak — opent uw e-mailprogramma"
               >
-                Start a project
+                Plan een afspraak
                 <svg
                   aria-hidden="true"
                   focusable="false"
@@ -87,15 +87,15 @@ export default function Contact() {
       {/* ── Footer ── */}
       <footer
         role="contentinfo"
-        aria-label="Site footer"
+        aria-label="Sitefooter"
         className="border-t border-[--border] bg-[--background]"
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8 h-16 flex items-center justify-between">
           <p className="text-xs text-[--muted]">
-            Aether Innovations &copy; 2026
+            TPP Breda &copy; 2026
           </p>
           <p className="text-xs text-[--muted]">
-            Built in Breda
+            Tandprothetisch Praktijk · Breda
           </p>
         </div>
       </footer>
